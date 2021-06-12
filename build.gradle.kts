@@ -1,5 +1,5 @@
 plugins {
-    kotlin("js") version "1.5.10"
+    kotlin("js")
 }
 
 group = "me.subroh_0508"
@@ -12,11 +12,14 @@ repositories {
 }
 
 dependencies {
+    val wrappers = Libraries.JsWrappers(kotlinVersion)
+
+    implementation(wrappers.react)
+    implementation(wrappers.reactDom)
+    implementation(wrappers.styled)
+    implementation(wrappers.reactRouterDom)
+
     testImplementation(kotlin("test"))
-    implementation("org.jetbrains:kotlin-react:17.0.1-pre.148-kotlin-1.4.30")
-    implementation("org.jetbrains:kotlin-react-dom:17.0.1-pre.148-kotlin-1.4.30")
-    implementation("org.jetbrains:kotlin-styled:5.2.1-pre.148-kotlin-1.4.30")
-    implementation("org.jetbrains:kotlin-react-router-dom:5.2.0-pre.148-kotlin-1.4.30")
 }
 
 kotlin {
