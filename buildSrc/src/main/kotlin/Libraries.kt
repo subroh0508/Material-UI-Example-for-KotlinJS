@@ -2,7 +2,7 @@
 
 object Libraries {
     class JsWrappers(kotlinVersion: String) {
-        private val wrappersBuild = "pre.207-kotlin-$kotlinVersion"
+        private val wrappersBuild = "pre.210-kotlin-$kotlinVersion"
 
         private val reactVersion = "${Npm.react}-$wrappersBuild"
         val react = "org.jetbrains.kotlin-wrappers:kotlin-react:$reactVersion"
@@ -31,7 +31,8 @@ object Libraries {
         const val reactRouterDom = "5.2.0"
 
         object MaterialUi {
-            const val core = "4.11.4"
+            // v4.11.4 does not work because index.js is not included in the npm module for some reason
+            const val core = "4.11.3"
             const val lab = "4.0.0-alpha.57"
         }
     }

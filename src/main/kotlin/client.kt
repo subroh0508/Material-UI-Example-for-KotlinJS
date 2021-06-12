@@ -4,7 +4,7 @@ import kotlinx.browser.window
 
 fun main() {
     window.onload = {
-        render(document.getElementById("root")) {
+        render(document.getElementById("root"), callback = {}) {
             child(Welcome::class) {
                 attrs {
                     name = "Kotlin/JS"
