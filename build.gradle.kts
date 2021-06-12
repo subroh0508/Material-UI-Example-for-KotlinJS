@@ -12,18 +12,21 @@ repositories {
 }
 
 dependencies {
-    val wrappers = Libraries.JsWrappers(kotlinVersion)
+    implementation(kotlinReflect)
 
+    val wrappers = Libraries.JsWrappers(kotlinVersion)
     implementation(wrappers.react)
     implementation(wrappers.reactDom)
     implementation(wrappers.styled)
     implementation(wrappers.reactRouterDom)
+    implementation(npm("@material-ui/core", Libraries.Npm.MaterialUi.core))
 
     testImplementation(kotlin("test"))
 }
 
 kotlin {
     js(IR) {
+        useCommonJs()
         binaries.executable()
         browser {
             commonWebpackConfig {

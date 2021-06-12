@@ -1,5 +1,8 @@
 import kotlinx.html.InputType
 import kotlinx.html.js.onChangeFunction
+import materialui.components.button.button
+import materialui.components.button.enums.ButtonColor
+import materialui.components.button.enums.ButtonVariant
 import org.w3c.dom.HTMLInputElement
 import react.RBuilder
 import react.RComponent
@@ -43,6 +46,13 @@ class Welcome(props: WelcomeProps) : RComponent<WelcomeProps, WelcomeState>(prop
                     )
                 }
             }
+        }
+        button {
+            attrs {
+                variant = ButtonVariant.contained
+                color = ButtonColor.primary
+            }
+            +"Primary"
         }
     }
 }
